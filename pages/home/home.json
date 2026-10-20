@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "博物馆学堂",
+  "usingComponents": {
+    "accessibility-toggle": "/components/accessibility-toggle/accessibility-toggle"
+  }
+}

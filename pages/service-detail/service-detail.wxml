@@ -1,0 +1,52 @@
+<view class="page {{a11yClass}}" wx:if="{{service}}">  <view class="panel">
+    <view class="tag">{{categoryName}}</view>
+    <view class="h1 detail-title">{{service.name}}</view>
+    <view class="body">{{service.summary}}</view>
+  </view>
+
+  <view class="section visual-card">
+    <image wx:if="{{service.visual.src}}" class="visual-image" src="{{service.visual.src}}" mode="aspectFill" />
+    <view wx:else class="visual-placeholder">
+      <view class="visual-mark">图片</view>
+      <view class="visual-label">{{service.visual.label}}</view>
+      <view class="visual-note">后续可替换为真实项目图、产品图或设计稿</view>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="h2">适用机构</view>
+    <view class="tag-wrap">
+      <view class="tag" wx:for="{{orgNames}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="h2">适合对象</view>
+    <view class="body">{{service.audience}}</view>
+  </view>
+
+  <view class="section card">
+    <view class="h2">解决什么问题</view>
+    <view class="body">{{service.problem}}</view>
+  </view>
+
+  <view class="section card">
+    <view class="h2">服务内容</view>
+    <view class="list">
+      <view class="list-item" wx:for="{{service.content}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="h2">交付成果</view>
+    <view class="list">
+      <view class="list-item" wx:for="{{service.deliverables}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="section panel price-panel">
+    <view class="h2">参考报价</view>
+    <view class="body">{{service.price}}</view>
+    <button class="btn primary full" bindtap="goContact">{{service.cta}}</button>
+  </view>
+</view>

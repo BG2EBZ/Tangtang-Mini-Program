@@ -1,0 +1,43 @@
+<view class="page {{a11yClass}}" wx:if="{{caseItem}}">  <view class="panel">
+    <view class="tag">{{caseItem.type}}</view>
+    <view class="h1 detail-title">{{caseItem.title}}</view>
+    <view class="body">{{caseItem.summary}}</view>
+  </view>
+
+  <image wx:if="{{caseItem.visual}}" class="case-hero-image section" src="{{caseItem.visual}}" mode="aspectFill" />
+
+  <view class="section card">
+    <view class="h2">项目背景</view>
+    <view class="body">{{caseItem.background}}</view>
+  </view>
+
+  <view class="section card">
+    <view class="h2">我们做了什么</view>
+    <view class="list">
+      <view class="list-item" wx:for="{{caseItem.work}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="section card">
+    <view class="h2">项目亮点</view>
+    <view class="list">
+      <view class="list-item" wx:for="{{caseItem.highlights}}" wx:key="*this">{{item}}</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="h2">相关服务</view>
+    <view class="service-list">
+      <view class="card" wx:for="{{relatedServices}}" wx:key="id" bindtap="openService" data-id="{{item.id}}">
+        <view class="service-name">{{item.name}}</view>
+        <view class="muted">{{item.summary}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section panel">
+    <view class="h2">想咨询类似项目？</view>
+    <view class="body">告诉我们你的机构类型、目标人群和项目场景，我们会提供初步建议。</view>
+    <button class="btn primary full" bindtap="goContact">预约初步沟通</button>
+  </view>
+</view>

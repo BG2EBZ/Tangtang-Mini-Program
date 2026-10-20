@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "服务与报价",
+  "usingComponents": {
+    "accessibility-toggle": "/components/accessibility-toggle/accessibility-toggle"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "关于与联系",
+  "usingComponents": {
+    "accessibility-toggle": "/components/accessibility-toggle/accessibility-toggle"
+  }
+}

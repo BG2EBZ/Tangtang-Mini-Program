@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "案例展示",
+  "usingComponents": {
+    "accessibility-toggle": "/components/accessibility-toggle/accessibility-toggle"
+  }
+}

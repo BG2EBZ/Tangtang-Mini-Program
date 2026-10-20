@@ -1,0 +1,19 @@
+.setting-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24rpx;
+  align-items: center;
+}
+
+.language-picker {
+  min-height: 92rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 24rpx;
+  padding: 0 28rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.84);
+  color: #343b39;
+  font-size: 28rpx;
+  font-weight: 800;
+}

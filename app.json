@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/services/services",
+    "pages/service-detail/service-detail",
+    "pages/selftest/selftest",
+    "pages/cases/cases",
+    "pages/case-detail/case-detail",
+    "pages/content/content",
+    "pages/content-detail/content-detail",
+    "pages/about/about",
+    "pages/settings/settings"
+  ],
+  "window": {
+    "navigationBarTitleText": "博物馆学堂",
+    "navigationBarBackgroundColor": "#F2F1F4",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F2F1F4"
+  },
+  "tabBar": {
+    "color": "#9AA09D",
+    "selectedColor": "#6A2E86",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/tabbar/home-off.png",
+        "selectedIconPath": "assets/tabbar/home-on.png"
+      },
+      {
+        "pagePath": "pages/services/services",
+        "text": "服务",
+        "iconPath": "assets/tabbar/services-off.png",
+        "selectedIconPath": "assets/tabbar/services-on.png"
+      },
+      {
+        "pagePath": "pages/content/content",
+        "text": "资讯",
+        "iconPath": "assets/tabbar/content-off.png",
+        "selectedIconPath": "assets/tabbar/content-on.png"
+      },
+      {
+        "pagePath": "pages/cases/cases",
+        "text": "案例",
+        "iconPath": "assets/tabbar/cases-off.png",
+        "selectedIconPath": "assets/tabbar/cases-on.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "联系",
+        "iconPath": "assets/tabbar/about-off.png",
+        "selectedIconPath": "assets/tabbar/about-on.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

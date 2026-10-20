@@ -1,0 +1,47 @@
+<view class="page {{a11yClass}}">
+  <view class="panel">
+    <view class="eyebrow">显示与无障碍设置</view>
+    <view class="h1">让浏览方式更适合你</view>
+    <view class="body">这些设置会保存在本机。第一版先支持文字、对比度和装饰简化，后续可以继续接入多语言内容。</view>
+  </view>
+
+  <view class="section card setting-card">
+    <view>
+      <view class="h2">大字模式</view>
+      <view class="body">增大标题、正文和按钮文字，减少阅读压力。</view>
+    </view>
+    <switch checked="{{settings.largeText}}" bindchange="toggleSetting" data-key="largeText" aria-label="开启或关闭大字模式" />
+  </view>
+
+  <view class="section card setting-card">
+    <view>
+      <view class="h2">高对比模式</view>
+      <view class="body">提高文字、卡片和背景的视觉区分度。</view>
+    </view>
+    <switch checked="{{settings.highContrast}}" bindchange="toggleSetting" data-key="highContrast" aria-label="开启或关闭高对比模式" />
+  </view>
+
+  <view class="section card setting-card">
+    <view>
+      <view class="h2">减少装饰</view>
+      <view class="body">减少渐变、贴纸和装饰图形，让页面更安静。</view>
+    </view>
+    <switch checked="{{settings.reduceDecoration}}" bindchange="toggleSetting" data-key="reduceDecoration" aria-label="开启或关闭减少装饰" />
+  </view>
+
+  <view class="section card setting-card">
+    <view>
+      <view class="h2">读屏支持</view>
+      <view class="body">已为按钮、图片和可点击卡片提供读屏标签。真正朗读由微信或系统读屏功能完成。</view>
+    </view>
+    <switch checked="{{true}}" disabled aria-label="读屏支持已开启" />
+  </view>
+
+  <view class="section card">
+    <view class="h2">语言</view>
+    <view class="body">多语言内容结构已预留，后续可以逐步补充英文等版本。</view>
+    <picker mode="selector" range="{{languageOptions}}" value="{{languageIndex}}" bindchange="changeLanguage">
+      <view class="language-picker" aria-role="button" aria-label="选择小程序语言">{{languageOptions[languageIndex]}}</view>
+    </picker>
+  </view>
+</view>

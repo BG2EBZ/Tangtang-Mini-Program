@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "科普与工具",
+  "usingComponents": {
+    "accessibility-toggle": "/components/accessibility-toggle/accessibility-toggle"
+  }
+}

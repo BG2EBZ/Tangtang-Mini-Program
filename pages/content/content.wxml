@@ -1,0 +1,96 @@
+<view class="page {{a11yClass}}">
+  <block wx:if="{{mode === 'main'}}">
+    <view class="panel">
+      <view class="eyebrow">科普与工具</view>
+      <view class="h1">持续分享无障碍<text class="title-line">与包容性体验资讯</text></view>
+      <view class="body">这里将用于发布无障碍、感官友好、普特融合与包容性体验相关内容，帮助机构和公众更好地理解不同人群的需求。</view>
+    </view>
+
+    <view class="section">
+      <view class="h2">科普文章分类</view>
+      <view class="category-grid">
+        <view class="card category-card" wx:for="{{articleCategories}}" wx:key="*this" bindtap="openCategory" data-category="{{item}}" aria-role="button" aria-label="查看{{item}}分类文章">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="row space-between content-section-head">
+        <view class="h2">精选文章</view>
+        <view class="more-link" bindtap="showAllArticles" aria-role="button" aria-label="查看全部精选文章">更多</view>
+      </view>
+      <view class="tool-list">
+        <view class="card" wx:for="{{articles}}" wx:key="id" bindtap="openArticle" data-id="{{item.id}}" aria-role="button" aria-label="阅读文章{{item.title}}">
+          <view class="tag">{{item.category}}</view>
+          <view class="tool-title">{{item.title}}</view>
+          <view class="muted">{{item.summary}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="row space-between content-section-head">
+        <view class="h2">工具分享</view>
+        <view class="more-link" bindtap="showAllTools" aria-role="button" aria-label="查看全部工具分享">更多</view>
+      </view>
+      <view class="tool-list">
+        <view class="card" wx:for="{{tools}}" wx:key="id" bindtap="openTool" data-id="{{item.id}}" aria-role="button" aria-label="查看工具{{item.title}}">
+          <view class="tag">{{item.type}}</view>
+          <view class="tool-title">{{item.title}}</view>
+          <view class="muted">{{item.summary}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section panel">
+      <view class="h2">不确定机构适合从哪里开始？</view>
+      <view class="body">先做一次包容性自测，了解你们当前的基础和优先改进方向。</view>
+      <button class="btn primary full" bindtap="goSelfTest">做一次包容性自测</button>
+    </view>
+
+    <view class="section panel">
+      <view class="h2">想根据你的空间获得建议？</view>
+      <view class="body">提交你的机构类型和项目需求，我们会提供初步判断。</view>
+      <button class="btn secondary full" bindtap="goContact">预约初步沟通</button>
+    </view>
+  </block>
+
+  <block wx:elif="{{mode === 'articles'}}">
+    <view class="panel">
+      <view class="back-link" bindtap="backToMain" aria-role="button" aria-label="返回科普与工具首页">返回</view>
+      <view class="h1 list-title">{{listTitle}}</view>
+      <view class="body">共 {{visibleArticles.length}} 篇内容</view>
+      <view class="search-wrap">
+        <input class="search-input" value="{{searchKeyword}}" bindinput="updateSearch" placeholder="搜索文章关键词" aria-label="搜索文章关键词" />
+      </view>
+    </view>
+    <view class="section tool-list" wx:if="{{visibleArticles.length}}">
+      <view class="card" wx:for="{{visibleArticles}}" wx:key="id" bindtap="openArticle" data-id="{{item.id}}" aria-role="button" aria-label="阅读文章{{item.title}}">
+        <view class="tag">{{item.category}}</view>
+        <view class="tool-title">{{item.title}}</view>
+        <view class="muted">{{item.summary}}</view>
+      </view>
+    </view>
+    <view class="section card empty-card" wx:else>
+      <view class="h2">内容准备中</view>
+      <view class="body">这个分类的文章还没有上线，后续会继续补充。</view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="panel">
+      <view class="back-link" bindtap="backToMain" aria-role="button" aria-label="返回科普与工具首页">返回</view>
+      <view class="h1 list-title">{{listTitle}}</view>
+      <view class="body">共 {{visibleTools.length}} 个工具</view>
+      <view class="search-wrap">
+        <input class="search-input" value="{{searchKeyword}}" bindinput="updateSearch" placeholder="搜索工具关键词" aria-label="搜索工具关键词" />
+      </view>
+    </view>
+    <view class="section tool-list">
+      <view class="card" wx:for="{{visibleTools}}" wx:key="id" bindtap="openTool" data-id="{{item.id}}" aria-role="button" aria-label="查看工具{{item.title}}">
+        <view class="tag">{{item.type}}</view>
+        <view class="tool-title">{{item.title}}</view>
+        <view class="muted">{{item.summary}}</view>
+      </view>
+    </view>
+  </block>
+</view>

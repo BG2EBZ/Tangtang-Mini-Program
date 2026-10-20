@@ -1,0 +1,258 @@
+page {
+  background:
+    linear-gradient(180deg, #eceaf1 0%, #e6e2ed 52%, #e2eee9 100%);
+  color: #171c1b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 28rpx;
+}
+
+view,
+text,
+button,
+input,
+textarea {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 34rpx 30rpx 48rpx;
+}
+
+.section {
+  margin-top: 48rpx;
+}
+
+.eyebrow {
+  color: #6a2e86;
+  font-size: 24rpx;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.h1 {
+  margin-top: 12rpx;
+  color: #171c1b;
+  font-size: 50rpx;
+  font-weight: 900;
+  line-height: 1.18;
+}
+
+.h2 {
+  color: #171c1b;
+  font-size: 34rpx;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.title-line {
+  display: block;
+}
+
+.body {
+  color: #36413f;
+  font-size: 27rpx;
+  line-height: 1.7;
+}
+
+.muted {
+  color: #5b6562;
+  font-size: 24rpx;
+  line-height: 1.55;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.99);
+  border: none;
+  border-radius: 30rpx;
+  padding: 34rpx;
+  box-shadow: 0 24rpx 58rpx rgba(42, 42, 56, 0.16), 0 8rpx 20rpx rgba(106, 46, 134, 0.1);
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.99);
+  border: none;
+  border-radius: 24rpx;
+  padding: 30rpx;
+  box-shadow: 0 20rpx 46rpx rgba(42, 42, 56, 0.15), 0 5rpx 16rpx rgba(78, 158, 145, 0.1);
+}
+
+.card .body,
+.panel .body {
+  margin-top: 26rpx;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18rpx;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 54rpx;
+  padding: 8rpx 22rpx;
+  border-radius: 999rpx;
+  background: linear-gradient(135deg, #f8e878, #d8c0e4);
+  color: #171c1b;
+  font-size: 22rpx;
+  font-weight: 900;
+}
+
+.button-row {
+  display: flex;
+  gap: 22rpx;
+  margin-top: 34rpx;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 92rpx;
+  border-radius: 999rpx;
+  padding: 0 36rpx;
+  font-size: 27rpx;
+  font-weight: 900;
+  line-height: 1.2;
+  border: none;
+}
+
+.btn.primary {
+  background: #8a55a3;
+  color: #ffffff;
+  box-shadow: 0 10rpx 24rpx rgba(138, 85, 163, 0.25);
+}
+
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #171c1b;
+  box-shadow: 0 10rpx 24rpx rgba(78, 158, 145, 0.2);
+}
+
+.list {
+  margin-top: 16rpx;
+}
+
+.list-item {
+  position: relative;
+  padding-left: 24rpx;
+  color: #36413f;
+  font-size: 26rpx;
+  line-height: 1.65;
+}
+
+.list-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 18rpx;
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #e09f3e;
+}
+
+.divider {
+  height: 1rpx;
+  margin: 24rpx 0;
+  background: rgba(23, 28, 27, 0.18);
+}
+
+.form-field {
+  margin-top: 20rpx;
+}
+
+.label {
+  margin-bottom: 10rpx;
+  color: #283331;
+  font-size: 25rpx;
+  font-weight: 700;
+}
+
+.input,
+.textarea,
+.picker {
+  width: 100%;
+  min-height: 78rpx;
+  border: 1rpx solid rgba(42, 68, 63, 0.16);
+  border-radius: 16rpx;
+  background: #ffffff;
+  color: #283331;
+  padding: 18rpx;
+  font-size: 26rpx;
+}
+
+.textarea {
+  min-height: 160rpx;
+}
+
+.page.a11y-large .h1 {
+  font-size: 56rpx;
+}
+
+.page.a11y-large .h2 {
+  font-size: 40rpx;
+}
+
+.page.a11y-large .body,
+.page.a11y-large .muted,
+.page.a11y-large .list-item {
+  font-size: 31rpx;
+}
+
+.page.a11y-large .btn,
+.page.a11y-large .tag {
+  font-size: 31rpx;
+}
+
+.page.a11y-contrast {
+  background: #dde1e4;
+}
+
+.page.a11y-contrast .panel,
+.page.a11y-contrast .card {
+  background: #ffffff;
+  box-shadow: 0 0 0 2rpx rgba(52, 59, 57, 0.24), 0 18rpx 42rpx rgba(42, 42, 56, 0.18);
+}
+
+.page.a11y-contrast .body,
+.page.a11y-contrast .muted,
+.page.a11y-contrast .list-item {
+  color: #202725;
+}
+
+.page.a11y-contrast .btn.primary {
+  background: #76508d;
+}
+
+.page.a11y-reduced .hero-stickers,
+.page.a11y-reduced .sticker {
+  display: none;
+}
+
+.page.a11y-reduced .panel,
+.page.a11y-reduced .card,
+.page.a11y-reduced .hero,
+.page.a11y-reduced .test-panel {
+  background: #ffffff;
+}
+
+button {
+  margin: 0;
+  border: none;
+}
+
+button::after {
+  border: none;
+}

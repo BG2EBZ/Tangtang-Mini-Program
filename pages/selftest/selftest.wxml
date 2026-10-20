@@ -1,0 +1,78 @@
+<view class="page {{a11yClass}}">
+  <view class="panel">
+    <view class="eyebrow">包容性体验自测</view>
+    <view class="h1">3 分钟测一测：<text class="title-line">你的机构对不同人群</text><text class="title-line">足够友好吗？</text></view>
+    <view class="body">这是一个快速自查工具，结果仅供初步参考，不替代专业评估。堂堂将从空间、信息、感官、服务和活动五个方面帮你了解包容性基础。</view>
+  </view>
+
+  <block wx:if="{{step === 'org'}}">
+    <view class="section">
+      <view class="h2">请选择机构类型</view>
+      <view class="org-list">
+        <view class="card org-card" wx:for="{{orgTypes}}" wx:key="id" bindtap="selectOrg" data-id="{{item.id}}" aria-role="button" aria-label="选择{{item.name}}开始自测">
+          <view class="org-name">{{item.name}}</view>
+          <view class="muted">开始自测</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:elif="{{step === 'questions'}}">
+    <view class="section">
+      <view class="h2">回答以下 10 个问题</view>
+      <view class="question-card card" wx:for="{{questions}}" wx:for-index="qIndex" wx:key="id">
+        <view class="tag">{{item.dimensionName}}</view>
+        <view class="question-text">{{qIndex + 1}}. {{item.text}}</view>
+        <view class="answer-grid">
+          <view
+            wx:for="{{answerOptions}}"
+            wx:for-item="option"
+            wx:key="label"
+            class="answer {{answers[item.id] === option.value ? 'active' : ''}}"
+            bindtap="chooseAnswer"
+            data-question="{{item.id}}"
+            data-value="{{option.value}}"
+            aria-role="button"
+            aria-label="第{{qIndex + 1}}题选择{{option.label}}"
+          >{{option.label}}</view>
+        </view>
+      </view>
+      <button class="btn primary full" bindtap="submitTest" aria-label="提交答案并查看自测结果">查看自测结果</button>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="section panel result-hero">
+      <view class="muted">你的包容性体验得分</view>
+      <view class="score">{{result.total}} / 100</view>
+      <view class="level">{{result.level.name}}</view>
+      <view class="body">{{result.level.text}}</view>
+    </view>
+
+    <view class="section card">
+      <view class="h2">维度得分</view>
+      <view class="dimension" wx:for="{{result.dimensions}}" wx:key="key">
+        <view class="row space-between">
+          <view class="dimension-name">{{item.name}}</view>
+          <view class="dimension-score">{{item.score}} / {{item.max}}</view>
+        </view>
+        <view class="bar"><view class="bar-fill" style="width: {{item.score / item.max * 100}}%;"></view></view>
+      </view>
+    </view>
+
+    <view class="section">
+      <view class="h2">推荐服务</view>
+      <view class="service-list">
+        <view class="card" wx:for="{{result.recommended}}" wx:key="id" bindtap="openService" data-id="{{item.id}}" aria-role="button" aria-label="查看推荐服务{{item.name}}">
+          <view class="service-name">{{item.name}}</view>
+          <view class="muted">{{item.summary}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="section button-row">
+      <button class="btn primary" bindtap="goContact" aria-label="进入联系页面预约初步沟通">预约初步沟通</button>
+      <button class="btn secondary" bindtap="restart" aria-label="重新开始包容性体验自测">重新自测</button>
+    </view>
+  </block>
+</view>

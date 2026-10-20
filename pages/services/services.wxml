@@ -1,0 +1,62 @@
+<view class="page {{a11yClass}}">
+  <view class="panel intro">
+    <view class="eyebrow">服务与报价</view>
+    <view class="h1">按你的机构需求，<text class="title-line">找到合适的服务</text></view>
+    <view class="body">我们为文化、商业与公共空间提供从评估、培训到工具制作和融合活动设计的包容性体验服务。以下价格为参考报价，具体费用会根据场地规模、项目周期、交付深度与差旅需求确认。</view>
+  </view>
+
+  <view class="switch">
+    <view class="switch-item {{mode === 'org' ? 'active' : ''}}" bindtap="switchMode" data-mode="org" aria-role="button" aria-label="按机构类型查看服务">按机构类型看</view>
+    <view class="switch-item {{mode === 'category' ? 'active' : ''}}" bindtap="switchMode" data-mode="category" aria-role="button" aria-label="按服务类型查看服务">按服务类型看</view>
+  </view>
+
+  <block wx:if="{{mode === 'org'}}">
+    <scroll-view scroll-x class="chip-scroll" show-scrollbar="{{false}}">
+      <view class="chip-row">
+        <view class="chip {{activeOrg === item.id ? 'active' : ''}}" wx:for="{{orgTypes}}" wx:key="id" bindtap="selectOrg" data-id="{{item.id}}" aria-role="button" aria-label="查看{{item.name}}推荐服务">{{item.short}}</view>
+      </view>
+    </scroll-view>
+    <view class="section">
+      <view class="h2">推荐服务</view>
+      <view class="service-list">
+        <view class="card service-card" wx:for="{{serviceList}}" wx:key="id" bindtap="openService" data-id="{{item.id}}" aria-role="button" aria-label="查看{{item.name}}服务详情">
+          <view class="thumb-mini">{{item.visual.label}}</view>
+          <view class="row space-between">
+            <view class="service-name">{{item.name}}</view>
+            <view class="arrow">›</view>
+          </view>
+          <view class="muted">{{item.summary}}</view>
+          <view class="price">{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <scroll-view scroll-x class="chip-scroll" show-scrollbar="{{false}}">
+      <view class="chip-row">
+        <view class="chip {{activeCategory === item.id ? 'active' : ''}}" wx:for="{{serviceCategories}}" wx:key="id" bindtap="selectCategory" data-id="{{item.id}}" aria-role="button" aria-label="查看{{item.name}}服务">{{item.name}}</view>
+      </view>
+    </scroll-view>
+    <view class="section">
+      <view class="h2">服务项目</view>
+      <view class="service-list">
+        <view class="card service-card" wx:for="{{categoryList}}" wx:key="id" bindtap="openService" data-id="{{item.id}}" aria-role="button" aria-label="查看{{item.name}}服务详情">
+          <view class="thumb-mini">{{item.visual.label}}</view>
+          <view class="row space-between">
+            <view class="service-name">{{item.name}}</view>
+            <view class="arrow">›</view>
+          </view>
+          <view class="muted">{{item.summary}}</view>
+          <view class="price">{{item.price}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <view class="section panel">
+    <view class="h2">还不确定适合哪项服务？</view>
+    <view class="body">先做一次快速自测，了解你的机构在空间、信息、感官、服务与活动方面的包容性基础。</view>
+    <button class="btn primary full" bindtap="goSelfTest" aria-label="开始包容性体验自测">测一测我的机构</button>
+  </view>
+</view>

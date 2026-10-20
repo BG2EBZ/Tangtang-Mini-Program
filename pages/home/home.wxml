@@ -1,0 +1,88 @@
+<view class="page {{a11yClass}}">
+  <view class="home-a11y">
+    <view class="welcome-deco" aria-hidden="true">WELCOME</view>
+    <image class="home-a11y-mascot" src="{{a11yMascot}}" mode="aspectFit" aria-hidden="true" />
+    <view class="home-a11y-pill" bindtap="toggleSettings" aria-role="button" aria-label="打开显示与无障碍设置">显示与无障碍设置</view>
+
+    <view wx:if="{{settingsOpen}}" class="home-a11y-panel">
+      <view class="setting-row">
+        <view>
+          <view class="setting-title">大字模式</view>
+          <view class="setting-desc">增大页面文字</view>
+        </view>
+        <switch checked="{{settings.largeText}}" bindchange="updateSetting" data-key="largeText" aria-label="开启或关闭大字模式" />
+      </view>
+      <view class="setting-row">
+        <view>
+          <view class="setting-title">高对比</view>
+          <view class="setting-desc">增强卡片与背景区分</view>
+        </view>
+        <switch checked="{{settings.highContrast}}" bindchange="updateSetting" data-key="highContrast" aria-label="开启或关闭高对比模式" />
+      </view>
+      <view class="setting-row">
+        <view>
+          <view class="setting-title">减少装饰</view>
+          <view class="setting-desc">隐藏部分装饰元素</view>
+        </view>
+        <switch checked="{{settings.reduceDecoration}}" bindchange="updateSetting" data-key="reduceDecoration" aria-label="开启或关闭减少装饰" />
+      </view>
+      <view class="setting-row">
+        <view>
+          <view class="setting-title">读屏支持</view>
+          <view class="setting-desc">已为按钮和卡片提供读屏标签</view>
+        </view>
+        <switch checked="{{true}}" disabled aria-label="读屏支持已开启" />
+      </view>
+      <picker mode="selector" range="{{languageOptions}}" value="{{languageIndex}}" bindchange="changeLanguage">
+        <view class="language-row" aria-role="button" aria-label="选择语言">
+          <view>
+            <view class="setting-title">语言</view>
+            <view class="setting-desc">{{languageOptions[languageIndex]}}</view>
+          </view>
+          <view class="chevron">›</view>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="hero panel">
+    <view class="hero-top">
+      <view>
+        <view class="eyebrow">MUSEUM SCHOOL</view>
+        <view class="h1">让空间、服务与活动<text class="title-line">对更多人友好</text></view>
+      </view>
+    </view>
+    <view class="body hero-copy">博物馆学堂由杭州齐物屿智能科技有限公司运营，为文化、商业与公共空间提供无障碍与包容性体验咨询、培训、感官友好工具与融合活动设计。</view>
+    <view class="hero-stickers" aria-hidden="true">
+      <view class="sticker teal">评估</view>
+      <view class="sticker yellow">感官友好</view>
+      <view class="sticker purple">融合活动</view>
+    </view>
+  </view>
+
+  <view class="section quote-section">
+    <view class="quote-text">所谓无障碍，不是为“特殊的人”提供特殊照顾，而是让每个人在“特殊的时候”，依然拥有选择、行动与参与的自由。</view>
+  </view>
+
+  <view class="section panel test-panel">
+    <view class="tag test-badge">堂堂自测</view>
+    <view class="test-layout">
+      <view class="test-copy">
+        <view class="h2 test-title">你的空间对不同人群<text class="title-line">足够友好吗？</text></view>
+        <view class="body">跟随堂堂完成 3 分钟自测，从空间、信息、感官、服务与活动五个方面了解你的机构包容性基础，并获得初步建议。</view>
+      </view>
+      <image class="tangtang" src="{{tangtangLogo}}" mode="aspectFit" aria-label="堂堂形象，指向左侧自测介绍" />
+    </view>
+    <button class="btn primary full" bindtap="goSelfTest" aria-label="开始包容性体验自测">开始自测</button>
+  </view>
+
+  <view class="section">
+    <view class="h2 compact-title">从评估到落地，<text class="title-line">支持机构变得更包容</text></view>
+  </view>
+
+  <view class="section panel cta">
+    <view class="h2">想知道你的机构适合从哪里开始？</view>
+    <view class="body">告诉我们你的场地、活动或服务需求，我们会提供初步建议。</view>
+    <button class="btn primary full" bindtap="goAbout" aria-label="进入联系页面预约初步沟通">预约初步沟通</button>
+  </view>
+</view>

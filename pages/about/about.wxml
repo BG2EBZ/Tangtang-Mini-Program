@@ -1,0 +1,205 @@
+<view class="page {{a11yClass}}">
+  <view class="brand-logo-hero">
+    <image class="brand-logo-image" src="{{msLogo}}" mode="aspectFit" aria-label="博物馆学堂品牌标志" />
+  </view>
+
+  <view class="panel">
+    <view class="eyebrow">关于博物馆学堂</view>
+    <view class="h1">包容性空间与活动<text class="title-line">服务品牌</text></view>
+    <view class="body">博物馆学堂是杭州齐物屿智能科技有限公司运营的包容性空间与活动服务品牌，专注于无障碍与包容性体验咨询、科普传播、员工培训、感官友好工具与融合活动设计。</view>
+    <view class="body about-copy">我们关注博物馆、展览场馆、商业空间、企业 CSR / ESG、学校、社区与公益机构中的不同人群需求，帮助机构把包容性理念转化为可落地的空间、服务、内容和活动方案。</view>
+  </view>
+
+  <view class="section about-work-section">
+    <view class="h2">我们如何工作</view>
+    <view class="work-map">
+      <view class="work-item work-left">
+        <view class="work-note">
+          <view class="work-num">01</view>
+          <view class="work-title">理解需求</view>
+          <view class="work-desc">了解机构类型、服务对象、空间条件、项目目标和当前痛点。</view>
+        </view>
+        <image class="work-illus" src="/assets/images/work-01.png" mode="aspectFit" aria-label="堂堂参与需求沟通的插画" />
+      </view>
+      <view class="work-curve right" aria-hidden="true">↘</view>
+      <view class="work-item work-right">
+        <image class="work-illus" src="/assets/images/work-02.png" mode="aspectFit" aria-label="共同观察空间与信息的插画" />
+        <view class="work-note">
+          <view class="work-num">02</view>
+          <view class="work-title">识别障碍</view>
+          <view class="work-desc">从空间、信息、感官、服务和活动五个维度梳理问题。</view>
+        </view>
+      </view>
+      <view class="work-curve left" aria-hidden="true">↙</view>
+      <view class="work-item work-left">
+        <view class="work-note">
+          <view class="work-num">03</view>
+          <view class="work-title">设计方案</view>
+          <view class="work-desc">提供评估、培训、工具制作、活动设计或传播内容等支持。</view>
+        </view>
+        <image class="work-illus" src="/assets/images/work-03.png" mode="aspectFit" aria-label="设计方案与资料整理的插画" />
+      </view>
+      <view class="work-curve right" aria-hidden="true">↘</view>
+      <view class="work-item work-right">
+        <image class="work-illus" src="/assets/images/work-04.png" mode="aspectFit" aria-label="团队协作推动项目落地的插画" />
+        <view class="work-note">
+          <view class="work-num">04</view>
+          <view class="work-title">陪伴落地</view>
+          <view class="work-desc">根据项目需要提供执行支持、员工培训、材料优化和复盘建议。</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section card tangtang-card">
+    <view class="tangtang-section">
+      <image class="about-tangtang" src="{{tangtangLogo}}" mode="aspectFit" aria-label="堂堂形象，正在挥手" />
+      <view>
+        <view class="h2">认识堂堂</view>
+        <view class="body">堂堂是博物馆学堂的包容性体验观察员。它会出现在科普文章、工具分享和自测功能中，陪伴大家理解无障碍、感官友好、普特融合与特殊群体支持。</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section card process-card">
+    <view class="h2">合作流程</view>
+    <view class="process-flow" aria-label="合作流程：提交需求、初步沟通、确认服务内容与报价、签署合同、项目执行、交付与复盘">
+      <view class="process-node">
+        <view class="process-dot">1</view>
+        <view class="process-text">提交需求</view>
+      </view>
+      <view class="process-node">
+        <view class="process-dot">2</view>
+        <view class="process-text">初步沟通</view>
+      </view>
+      <view class="process-node">
+        <view class="process-dot">3</view>
+        <view class="process-text">确认服务内容与报价</view>
+      </view>
+      <view class="process-node">
+        <view class="process-dot">4</view>
+        <view class="process-text">签署合同</view>
+      </view>
+      <view class="process-node">
+        <view class="process-dot">5</view>
+        <view class="process-text">项目执行</view>
+      </view>
+      <view class="process-node">
+        <view class="process-dot">6</view>
+        <view class="process-text">交付与复盘</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section card contact-card">
+    <view class="h2">联系方式</view>
+    <view class="contact-list">
+      <view class="contact-item">
+        <view>
+          <view class="contact-label">所在城市</view>
+          <view class="contact-value">{{brand.contact.city}}</view>
+        </view>
+      </view>
+      <view class="contact-item" bindtap="copyContact" data-label="电话" data-value="{{brand.contact.phone}}" aria-role="button" aria-label="复制电话">
+        <view>
+          <view class="contact-label">电话</view>
+          <view class="contact-value">{{brand.contact.phone}}</view>
+        </view>
+        <view class="copy-pill">复制</view>
+      </view>
+      <view class="contact-item" bindtap="copyContact" data-label="邮箱" data-value="{{brand.contact.email}}" aria-role="button" aria-label="复制邮箱">
+        <view>
+          <view class="contact-label">邮箱</view>
+          <view class="contact-value">{{brand.contact.email}}</view>
+        </view>
+        <view class="copy-pill">复制</view>
+      </view>
+      <view class="contact-item" bindtap="copyContact" data-label="微信号" data-value="{{brand.contact.wechat}}" aria-role="button" aria-label="复制微信号">
+        <view>
+          <view class="contact-label">微信 / 企业微信</view>
+          <view class="contact-value">{{brand.contact.wechat}}</view>
+        </view>
+        <view class="copy-pill">复制</view>
+      </view>
+      <view class="contact-item" bindtap="copyContact" data-label="公众号" data-value="{{brand.contact.publicAccount}}" aria-role="button" aria-label="复制公众号名称">
+        <view>
+          <view class="contact-label">公众号</view>
+          <view class="contact-value">{{brand.contact.publicAccount}}</view>
+        </view>
+        <view class="copy-pill">复制</view>
+      </view>
+    </view>
+    <view class="qr-grid">
+      <view class="qr-card">
+        <view class="qr-box">二维码</view>
+        <view class="qr-title">公众号</view>
+      </view>
+      <view class="qr-card" bindtap="copyContact" data-label="小红书链接" data-value="{{brand.contact.redbookUrl}}" aria-role="button" aria-label="复制小红书链接">
+        <view class="qr-box">二维码</view>
+        <view class="qr-title">小红书</view>
+        <view class="copy-pill inline">复制链接</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section panel demand-panel">
+    <view class="h2">提交项目需求</view>
+    <view class="body">第一版先将需求内容复制到剪贴板，后续可接入表单后台、企业微信或客服消息。</view>
+
+    <view class="form-field">
+      <view class="label">机构名称</view>
+      <input class="input" placeholder="请输入机构名称" data-field="orgName" bindinput="updateField" />
+    </view>
+
+    <view class="form-field">
+      <view class="label">机构类型</view>
+      <picker mode="selector" range="{{orgTypes}}" range-key="name" value="{{selectedOrgIndex}}" bindchange="bindOrgChange">
+        <view class="picker">{{orgTypes[selectedOrgIndex].name}}</view>
+      </picker>
+    </view>
+
+    <view class="form-field">
+      <view class="label">联系人</view>
+      <input class="input" placeholder="请输入联系人" data-field="contactName" bindinput="updateField" />
+    </view>
+
+    <view class="form-field">
+      <view class="label">联系方式</view>
+      <input class="input" placeholder="电话 / 微信 / 邮箱" data-field="phone" bindinput="updateField" />
+    </view>
+
+    <view class="form-field">
+      <view class="label">所在城市</view>
+      <input class="input" placeholder="请输入城市" data-field="city" bindinput="updateField" />
+    </view>
+
+    <view class="form-field">
+      <view class="label">感兴趣的服务</view>
+      <picker mode="selector" range="{{serviceOptions}}" value="{{selectedServiceIndex}}" bindchange="bindServiceChange">
+        <view class="picker">{{serviceOptions[selectedServiceIndex]}}</view>
+      </picker>
+    </view>
+
+    <view class="form-field">
+      <view class="label">项目预算（可选）</view>
+      <input class="input" placeholder="如：5万以内 / 10-20万 / 待确认" data-field="budget" bindinput="updateField" />
+    </view>
+
+    <view class="form-field">
+      <view class="label">预计时间（可选）</view>
+      <input class="input" placeholder="如：7月启动 / 下半年 / 待确认" data-field="timing" bindinput="updateField" />
+    </view>
+
+    <view class="form-field">
+      <view class="label">需求描述</view>
+      <textarea class="textarea" placeholder="简单描述你的场地、活动或服务需求" data-field="description" bindinput="updateField"></textarea>
+    </view>
+
+    <button class="btn primary full" bindtap="submitForm">提交需求</button>
+  </view>
+
+  <view class="section button-row">
+    <button class="btn secondary" bindtap="goServices">查看服务与报价</button>
+    <button class="btn secondary" bindtap="goSelfTest">做一次自测</button>
+  </view>
+</view>

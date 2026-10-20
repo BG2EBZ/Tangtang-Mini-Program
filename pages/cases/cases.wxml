@@ -1,0 +1,24 @@
+<view class="page {{a11yClass}}">
+  <view class="panel">
+    <view class="eyebrow">案例展示</view>
+    <view class="h1">把包容性理念<text class="title-line">转化为具体项目</text></view>
+    <view class="body">我们与文化场馆、企业品牌和公益伙伴合作，将无障碍与包容性理念转化为空间支持、员工培训、科普活动和融合体验。具体案例内容将持续补充。</view>
+  </view>
+
+  <scroll-view scroll-x class="chip-scroll" show-scrollbar="{{false}}">
+    <view class="chip-row">
+      <view class="chip {{active === item ? 'active' : ''}}" wx:for="{{filters}}" wx:key="*this" bindtap="selectFilter" data-name="{{item}}">{{item}}</view>
+    </view>
+  </scroll-view>
+
+  <view class="section case-list">
+    <view class="card case-card" wx:for="{{visibleCases}}" wx:key="id" bindtap="openCase" data-id="{{item.id}}">
+      <image wx:if="{{item.visual}}" class="case-image" src="{{item.visual}}" mode="aspectFill" />
+      <view wx:else class="case-image placeholder">{{item.type}}</view>
+      <view class="tag">{{item.type}}</view>
+      <view class="case-title">{{item.title}}</view>
+      <view class="body">{{item.summary}}</view>
+      <button class="btn secondary small" catchtap="goContact">咨询类似项目</button>
+    </view>
+  </view>
+</view>

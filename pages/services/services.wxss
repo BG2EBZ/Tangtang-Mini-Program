@@ -1,0 +1,109 @@
+.intro .body {
+  margin-top: 18rpx;
+}
+
+.switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12rpx;
+  margin-top: 32rpx;
+  padding: 10rpx;
+  border: none;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.switch-item {
+  min-height: 82rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999rpx;
+  color: #36413f;
+  font-size: 26rpx;
+  font-weight: 900;
+}
+
+.switch-item.active {
+  background: linear-gradient(135deg, #6a2e86, #4e9e91);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.chip-scroll {
+  margin-top: 30rpx;
+  white-space: nowrap;
+}
+
+.chip-row {
+  display: inline-flex;
+  gap: 18rpx;
+  padding-bottom: 8rpx;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 72rpx;
+  padding: 0 30rpx;
+  border: none;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.92);
+  color: #171c1b;
+  font-size: 24rpx;
+  font-weight: 900;
+}
+
+.chip.active {
+  background: linear-gradient(135deg, #b9ddd6, #d8c0e4);
+  color: #171c1b;
+}
+
+.service-list {
+  display: grid;
+  gap: 30rpx;
+  margin-top: 30rpx;
+}
+
+.service-name {
+  max-width: 560rpx;
+  color: #171c1b;
+  font-size: 29rpx;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.thumb-mini {
+  min-height: 104rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24rpx;
+  border: none;
+  border-radius: 18rpx;
+  background: linear-gradient(135deg, #fff8ee, #edf8f5);
+  color: #6a2e86;
+  font-size: 24rpx;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.arrow {
+  color: #6a2e86;
+  font-size: 42rpx;
+  line-height: 1;
+}
+
+.price {
+  margin-top: 20rpx;
+  color: #6a2e86;
+  font-size: 24rpx;
+  line-height: 1.55;
+}
+
+.full {
+  width: 100%;
+  margin-top: 32rpx;
+}

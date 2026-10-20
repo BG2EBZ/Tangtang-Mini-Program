@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "包容性自测",
+  "usingComponents": {
+    "accessibility-toggle": "/components/accessibility-toggle/accessibility-toggle"
+  }
+}

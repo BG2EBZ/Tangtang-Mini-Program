@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "显示与无障碍设置",
+  "usingComponents": {
+    "accessibility-toggle": "/components/accessibility-toggle/accessibility-toggle"
+  }
+}

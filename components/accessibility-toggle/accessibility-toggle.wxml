@@ -1,0 +1,54 @@
+<view class="a11y-widget">
+  <button class="a11y-trigger" bindtap="togglePanel" aria-label="打开无障碍和语言设置">
+    <image class="a11y-mascot" src="/assets/images/tangtang-a11y-peek.png" mode="aspectFit" aria-hidden="true" />
+    <text class="a11y-label">无障碍</text>
+  </button>
+  <view wx:if="{{open}}" class="a11y-panel">
+    <view class="panel-head">
+      <view class="panel-title">无障碍与语言</view>
+      <view class="panel-close" bindtap="closePanel" aria-role="button" aria-label="关闭设置">×</view>
+    </view>
+
+    <view class="setting-row">
+      <view>
+        <view class="setting-title">大字模式</view>
+        <view class="setting-desc">增大页面文字</view>
+      </view>
+      <switch checked="{{settings.largeText}}" bindchange="updateSetting" data-key="largeText" aria-label="开启或关闭大字模式" />
+    </view>
+
+    <view class="setting-row">
+      <view>
+        <view class="setting-title">高对比</view>
+        <view class="setting-desc">增强卡片与背景区分</view>
+      </view>
+      <switch checked="{{settings.highContrast}}" bindchange="updateSetting" data-key="highContrast" aria-label="开启或关闭高对比模式" />
+    </view>
+
+    <view class="setting-row">
+      <view>
+        <view class="setting-title">减少装饰</view>
+        <view class="setting-desc">隐藏部分装饰元素</view>
+      </view>
+      <switch checked="{{settings.reduceDecoration}}" bindchange="updateSetting" data-key="reduceDecoration" aria-label="开启或关闭减少装饰" />
+    </view>
+
+    <view class="setting-row">
+      <view>
+        <view class="setting-title">读屏支持</view>
+        <view class="setting-desc">已为按钮和卡片提供读屏标签</view>
+      </view>
+      <switch checked="{{true}}" disabled aria-label="读屏支持已开启" />
+    </view>
+
+    <picker mode="selector" range="{{languageOptions}}" value="{{languageIndex}}" bindchange="changeLanguage">
+      <view class="language-row" aria-role="button" aria-label="选择语言">
+        <view>
+          <view class="setting-title">语言</view>
+          <view class="setting-desc">{{languageOptions[languageIndex]}}</view>
+        </view>
+        <view class="chevron">›</view>
+      </view>
+    </picker>
+  </view>
+</view>
